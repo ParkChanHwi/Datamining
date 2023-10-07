@@ -14,6 +14,22 @@ print(range)
 
 summary(a)
 
+setwd("/Users/parkchanhwi/R_test")
 
+edu = read.table("education.txt",header = TRUE, fileEncoding = "CP949", encoding = "UTF-8")
+edu 
 
-edu = read.table("education.txt",header = TRUE)
+name = edu[,1]
+print(name) # 학력이름 읽기
+
+#1970년 데이터 추출
+grade70 = edu[,2]
+print(grade70)
+
+grade90 = edu[,3]
+print(grade90)
+
+par(mfrow = c(1,2))
+
+pie(grade70, label = name, clockwise = T, col = c(2:5), main = "1970years grade")
+
